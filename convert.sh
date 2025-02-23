@@ -12,7 +12,7 @@ fi
 # Create the dist directory
 mkdir -p "$DIST_DIR"
 
-# Convert .tex files to PDF and DOCX
+# Convert .tex files to PDF, DOCX, and Markdown
 for file in "$SRC_DIR"/*.tex; do
   if [ -f "$file" ]; then
     fileName=$(basename "$file" .tex)
@@ -31,6 +31,14 @@ for file in "$SRC_DIR"/*.tex; do
       echo "Converted $file to DOCX."
     else
       echo "Error converting $file to DOCX."
+    fi
+
+    # Convert .tex to Markdown
+    pandoc "$file" -s -o "$DIST_DIR/$fileName.md"
+    if [ $? -eq 0 ]; then
+      echo "Converted $file to Markdown."
+    else
+      echo "Error converting $file to Markdown."
     fi
   fi
 done

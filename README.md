@@ -1,22 +1,21 @@
 # README.md
 
-# Resume Project
+# Personal Resume
 
-This project is designed to generate a resume in multiple formats (PDF, HTML, and DOC) from a LaTeX source file. The LaTeX code for the resume is located in the `src/resume.tex` file.
+This project is designed to generate a resume in multiple formats (PDF, DOCX, and Markdown) from a LaTeX source file. The LaTeX code for the resume is located in the `src/resume.tex` file.
 
 ## Project Structure
 
 - `src/resume.tex`: Contains the LaTeX code for the resume, including sections for work experience and education.
-- `dist/`: Directory where the output files (PDF, HTML, and DOC formats) will be stored.
-- `scripts/convert.sh`: Shell script that contains the commands to convert the LaTeX file into the desired formats.
-- `package.json`: Configuration file for npm, listing dependencies and scripts for the project.
+- `dist/`: Directory where the output files (PDF, DOCX, and Markdown formats) will be stored.
+- `convert.sh`: Shell script that contains the commands to convert the LaTeX file into the desired formats.
 
 ## Prerequisites
 
 Before running the conversion script, ensure you have the following installed:
 
 - LaTeX distribution (e.g., TeX Live, MiKTeX)
-- Pandoc (for HTML and DOC conversion)
+- Pandoc (for DOCX and Markdown conversion)
 - Bash shell (for running the script)
 
 ## How to Run the Conversion Script
@@ -25,7 +24,7 @@ Before running the conversion script, ensure you have the following installed:
 2. Run the following command to execute the conversion script:
 
    ```bash
-   ./scripts/convert.sh
+   ./convert.sh
    ```
 
 3. The output files will be generated and saved in the `dist/` directory.
