@@ -4,10 +4,13 @@
 SRC_DIR="src"
 DIST_DIR="dist"
 
-# Create the dist directory if it doesn't exist
-if [ ! -d "$DIST_DIR" ]; then
-  mkdir -p "$DIST_DIR"
+# Remove the dist directory if it exists
+if [ -d "$DIST_DIR" ]; then
+  rm -rf "$DIST_DIR"
 fi
+
+# Create the dist directory
+mkdir -p "$DIST_DIR"
 
 # Convert .tex files to PDF and DOCX
 for file in "$SRC_DIR"/*.tex; do
